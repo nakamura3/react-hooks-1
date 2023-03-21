@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>React Sample 3 (こんにちは)</title>
+  <meta charset="UTF-8" />
+  <!-- 参考：https://ja.reactjs.org/docs/cdn-links.html -->
+  <!-- 参考：https://babeljs.io/setup#installation -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="container"></div>
+  <script type="text/babel">
+    const NameInput = () => {
+      const [name, setName] = React.useState("◯◯");
+      const handleChange = e => setName(e.target.value);
+      return (
+        <div>
+          <input type="text" onChange={handleChange} />
+          <p>こんにちは、{name}さん</p>
+        </div>
+      );
+    };
+    const domContainer = document.querySelector("#container");
+    const root = ReactDOM.createRoot(domContainer);
+    root.render(<NameInput />);
+  </script>
+</body>
+</html>
