@@ -12,4 +12,10 @@ Section 24, 制御フォーム
 - InputCheckBox (チェックボックス; 選択値配列で管理)
 - InputCheckBox2 (チェックボックス; 状態オブジェクトで管理)
 
+## use-effect
+Section 27, useEffect フック
+- CountUp (依存配列の機能を確認)
+- AutoCounter (クリーンアップの確認)
+
+
 
