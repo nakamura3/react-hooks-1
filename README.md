@@ -17,5 +17,9 @@ Section 27, useEffect フック
 - CountUp (依存配列の機能を確認)
 - AutoCounter (クリーンアップの確認)
 
-
+## use-callback
+Section 28, React.memo, useCallback, useMemo
+- Counter1 (React.memo のサンプル)
+- Counter2 (useCallback のサンプル)
+- Counter3 (useMemo のサンプル)
 
