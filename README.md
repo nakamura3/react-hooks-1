@@ -42,3 +42,9 @@ Section 30, useContext, createContext
   - First3 (中間コンポーネント)
   - Second3 (中間コンポーネント)
   - Third3 (コンシューマーコンポーネント)
+
+## use-counter (カスタム フック)
+Section31, ロジックをカスタムフックに分離
+- hooks (カスタムフックの定義)
+- CounterA (表示コンポーネントA)
+- CounterB (表示コンポーネントB)
