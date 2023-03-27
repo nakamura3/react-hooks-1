@@ -48,3 +48,9 @@ Section31, ロジックをカスタムフックに分離
 - hooks (カスタムフックの定義)
 - CounterA (表示コンポーネントA)
 - CounterB (表示コンポーネントB)
+
+## todo-app
+Chapter 6
+
+詳細は  todo-app/README.md 参照
+
