@@ -1,6 +1,4 @@
-import { useState, useEffect } from 'react';
-
-const todoDataUrl = "http://localhost:3100/todos";
+import { useTodo } from './useTodo';
 
 // TodoTitle コンポーネント
 const TodoTitle = ({ title, as }) => {
@@ -32,14 +30,7 @@ const TodoList = ({ todoList }) => {
 };
 
 function App() {
-  const [todos, setTodos] = useState([]);
-
-  useEffect(() => {
-    fetch(todoDataUrl)
-      .then(response => response.json())
-      .then(data => setTodos(data));
-  }, []);
-  console.log("TODOリスト", todos);
+  const { todos, toggleTodo, addTodo, deleteTodo } = useTodo();
 
   const inCompletedList = todos.filter(todo => ! todo.done);
   const completedList = todos.filter(todo => todo.done);
