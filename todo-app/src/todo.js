@@ -17,10 +17,10 @@ export const addTodoData = async (todo) => {
 };
 
 export const deleteTodoData = async (id) => {
-  const response = await fetch(`${todoDataUrl}/${id}`, {
+  await fetch(`${todoDataUrl}/${id}`, {
     method: 'DELETE'
   });
-  return response.json();
+  return id;
 };
 
 export const updateTodoData = async (id, todo) => {
