@@ -19,3 +19,6 @@ JSON Server を準備する
 モックサーバーと通信してTODOを取得する
 node-fetch を準備する
 - 更新 App.js (useEffect でデータを fetch)
+
+## step-4
+TODO一覧を状態(完了/未完了)別に表示させる
