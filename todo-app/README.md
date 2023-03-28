@@ -14,3 +14,8 @@ npm start
 ## step-2
 JSON Server を準備する
 - db.json (サーバーデータ)
+
+## step-3
+モックサーバーと通信してTODOを取得する
+node-fetch を準備する
+- 更新 App.js (useEffect でデータを fetch)
