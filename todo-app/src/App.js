@@ -2,6 +2,35 @@ import { useState, useEffect } from 'react';
 
 const todoDataUrl = "http://localhost:3100/todos";
 
+// TodoTitle コンポーネント
+const TodoTitle = ({ title, as }) => {
+  if (as === 'h1') return <h1>{title}</h1>;
+  if (as === 'h2') return <h2>{title}</h2>;
+  return <p>{title}</p>;
+};
+
+// TodoItem コンポーネント
+const TodoItem = ({ todo }) => {
+  return (
+    <li>
+      { todo.content }
+      <button>{ todo.done ? '未完了リストへ' : '完了リストへ' }</button>
+      <button>削除</button>
+    </li>
+  );
+};
+
+// TodoList コンポーネント
+const TodoList = ({ todoList }) => {
+  return (
+    <ul>
+      { todoList.map(todo => (
+        <TodoItem todo={todo} key={todo.id} />
+      ))}
+    </ul>
+  );
+};
+
 function App() {
   const [todos, setTodos] = useState([]);
 
@@ -15,32 +44,17 @@ function App() {
   const inCompletedList = todos.filter(todo => ! todo.done);
   const completedList = todos.filter(todo => todo.done);
 
-
   return (
     <>
-      <h1>TODO進捗管理</h1>
+      <TodoTitle title="TODO進捗管理" as ="h1" />
       <textarea />
       <button>+ TODOを追加</button>
-      <h2>未完了TODOリスト</h2>
-      <ul>
-        { inCompletedList.map(todo => (
-          <li key={todo.id}>
-            {todo.content}
-            <button>完了リストへ</button>
-            <button>削除</button>
-          </li>
-        ))}
-      </ul>
-      <h2>完了TODOリスト</h2>
-      <ul>
-        { completedList.map(todo => (
-          <li key={todo.id}>
-            {todo.content}
-            <button>未完了リストへ</button>
-            <button>削除</button>
-          </li>
-        ))}
-      </ul>
+
+      <TodoTitle title="未完了リスト" as ="h2" />
+      <TodoList todoList={inCompletedList} />
+
+      <TodoTitle title="完了リスト" as ="h2" />
+      <TodoList todoList={completedList} />
     </>
   );
 }
