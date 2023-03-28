@@ -11,3 +11,6 @@ npx create-react-app todo-app
 npm start
 ```
 
+## step-2
+JSON Server を準備する
+- db.json (サーバーデータ)
