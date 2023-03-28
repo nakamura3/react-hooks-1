@@ -38,3 +38,8 @@ TODOを取得、追加、更新、削除するカスタムフックを作成す�
 ## step-8
 TODOをカスタムフックから取得する
 - 更新 App.js (useTodoを使う)
+
+## step-9
+新規TODOの追加機能を実装する
+テキストエリアは日制御コンポーネントとし useRef を使って値にアクセスする
+- 更新 App.js (useRef, addTodo を使う)

@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { useTodo } from './useTodo';
 
 // TodoTitle コンポーネント
@@ -31,15 +32,22 @@ const TodoList = ({ todoList }) => {
 
 function App() {
   const { todos, toggleTodo, addTodo, deleteTodo } = useTodo();
+  const textArea = useRef(null);
 
+  const handleAdd = () => {
+    const text = textArea.current.value;
+    if (text === '') return;
+    addTodo(text);
+    textArea.current.value = '';
+  };
   const inCompletedList = todos.filter(todo => ! todo.done);
   const completedList = todos.filter(todo => todo.done);
 
   return (
     <>
       <TodoTitle title="TODO進捗管理" as ="h1" />
-      <textarea />
-      <button>+ TODOを追加</button>
+      <textarea ref={textArea} />
+      <button onClick={handleAdd} >+ TODOを追加</button>
 
       <TodoTitle title="未完了リスト" as ="h2" />
       <TodoList todoList={inCompletedList} />
