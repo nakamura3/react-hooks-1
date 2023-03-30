@@ -9,22 +9,26 @@ const TodoTitle = ({ title, as }) => {
 };
 
 // TodoItem コンポーネント
-const TodoItem = ({ todo }) => {
+const TodoItem = ({ todo, toggleTodo, deleteTodo }) => {
+  // イベントとAPIを仲介するハンドラを定義
+  const handleToggle = () => toggleTodo(todo.id, todo.done);
+  const handleDelete = () => deleteTodo(todo.id);
+
   return (
     <li>
       { todo.content }
-      <button>{ todo.done ? '未完了リストへ' : '完了リストへ' }</button>
-      <button>削除</button>
+      <button onClick={handleToggle} >{ todo.done ? '未完了リストへ' : '完了リストへ' }</button>
+      <button onClick={handleDelete} >削除</button>
     </li>
   );
 };
 
 // TodoList コンポーネント
-const TodoList = ({ todoList }) => {
+const TodoList = ({ todoList, toggleTodo, deleteTodo }) => {
   return (
     <ul>
       { todoList.map(todo => (
-        <TodoItem todo={todo} key={todo.id} />
+        <TodoItem todo={todo} key={todo.id} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
       ))}
     </ul>
   );
@@ -59,10 +63,10 @@ function App() {
       <TodoAdd inputRef={textArea} handleAdd={handleAdd} />
 
       <TodoTitle title="未完了リスト" as ="h2" />
-      <TodoList todoList={inCompletedList} />
+      <TodoList todoList={inCompletedList} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
 
       <TodoTitle title="完了リスト" as ="h2" />
-      <TodoList todoList={completedList} />
+      <TodoList todoList={completedList} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </>
   );
 }
