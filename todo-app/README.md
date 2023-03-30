@@ -66,3 +66,11 @@ TODOリストのアイテムに設置したボタンの機能を実装する
 リファクタリング (handleAdd を TodoAdd へ移動)
 - 更新 components/App.js
 - 更新 components/TodoAdd.js
+
+## step-14
+Chakra UI で TODOアプリにデザインを組み込む
+(Chakra v2 は React 18以降用)
+Chakra UI を準備する
+  @chakra-ui/react @emotion/react @emotion/styled framer-motion @chakra-ui/icons
+- 新規 theme/theme.js (グローバルなテーマを設定する)
+- 更新 index.js (ChakraProvider を設置)
