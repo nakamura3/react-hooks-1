@@ -1,0 +1,34 @@
+import { useRef } from 'react';
+import { useTodo } from '../hooks/useTodo';
+import TodoAdd from './TodoAdd';
+import TodoList from './TodoList';
+import TodoTitle from './TodoTitle';
+
+function App() {
+  const { todos, toggleTodo, addTodo, deleteTodo } = useTodo();
+  const textArea = useRef(null);
+
+  const handleAdd = () => {
+    const text = textArea.current.value;
+    if (text === '') return;
+    addTodo(text);
+    textArea.current.value = '';
+  };
+  const inCompletedList = todos.filter(todo => ! todo.done);
+  const completedList = todos.filter(todo => todo.done);
+
+  return (
+    <>
+      <TodoTitle title="TODO進捗管理" as ="h1" />
+      <TodoAdd inputRef={textArea} handleAdd={handleAdd} />
+
+      <TodoTitle title="未完了リスト" as ="h2" />
+      <TodoList todoList={inCompletedList} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+
+      <TodoTitle title="完了リスト" as ="h2" />
+      <TodoList todoList={completedList} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+    </>
+  );
+}
+
+export default App;

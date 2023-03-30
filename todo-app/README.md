@@ -51,3 +51,12 @@ TODO追加フォームコンポーネントを作成する
 ## step-11
 TODOリストのアイテムに設置したボタンの機能を実装する
 - 更新 App.js (カスタムフックのロジックをボタンと紐付ける)
+
+## step-12
+コンポーネントごとに別ファイルに切り分ける
+- 移動 apis/todo.js
+- 新規 components/TodoAdd.js
+- 新規 components/TodoItem.js
+- 新規 components/TodoList.js
+- 新規 components/TodoTitle.js
+- 移動 hooks/useTodo.js

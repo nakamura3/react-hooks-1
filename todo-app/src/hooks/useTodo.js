@@ -8,7 +8,7 @@
  */
 import { useEffect, useState } from 'react';
 import { ulid } from 'ulid';
-import * as api from './todo';
+import * as api from '../apis/todo';
 
 export const useTodo = () => {
   const [todos, setTodos] = useState([]);
