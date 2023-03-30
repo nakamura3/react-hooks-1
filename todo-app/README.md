@@ -55,8 +55,14 @@ TODOリストのアイテムに設置したボタンの機能を実装する
 ## step-12
 コンポーネントごとに別ファイルに切り分ける
 - 移動 apis/todo.js
+- 移動 components/App.js
 - 新規 components/TodoAdd.js
 - 新規 components/TodoItem.js
 - 新規 components/TodoList.js
 - 新規 components/TodoTitle.js
 - 移動 hooks/useTodo.js
+
+## step-13
+リファクタリング (handleAdd を TodoAdd へ移動)
+- 更新 components/App.js
+- 更新 components/TodoAdd.js
