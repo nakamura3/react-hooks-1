@@ -1,7 +1,8 @@
 import { useRef } from 'react';
+import { Textarea, Button } from '@chakra-ui/react';
 
 // TodoAdd コンポーネント (非制御コンポーネント実装)
-const TodoAdd = ({ addTodo }) => {
+const TodoAdd = ({ placeholder, leftIcon, buttonText, addTodo }) => {
   const inputRef = useRef(null);
 
   // イベントとAPIを仲介するハンドラを定義
@@ -14,8 +15,12 @@ const TodoAdd = ({ addTodo }) => {
 
   return (
       <>
-        <textarea ref={inputRef} />
-        <button onClick={handleAdd}>+ TODOを追加</button>
+        <Textarea placeholder={placeholder} bgColor="white" mt="8" borderColor="gray.400"
+                  ref={inputRef} />
+        <Button onClick={handleAdd}
+                colorScheme="blue" leftIcon={leftIcon} mt="8">
+          {buttonText}
+        </Button>
       </>
     );
   };

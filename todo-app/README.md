@@ -93,3 +93,7 @@ TodoList に List を使用
 - 更新 components/TodoItem.js
 - 更新 components/TodoList.js
 
+## step-18
+TodoAdd に TextArea, Button を使用
+- 更新 components/TodoAdd.js
+- 更新 components/App.js
