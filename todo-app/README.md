@@ -87,3 +87,9 @@ TodoTitle に Heading を使用
 - 更新 components/TodoList.js
 - 更新 components/App.js
 
+## step-17
+TodoItem に ListItem, Text, Flex, Button, IconButton を使用
+TodoList に List を使用
+- 更新 components/TodoItem.js
+- 更新 components/TodoList.js
+
