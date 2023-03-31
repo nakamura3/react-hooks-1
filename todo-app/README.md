@@ -74,3 +74,8 @@ Chakra UI を準備する
   @chakra-ui/react @emotion/react @emotion/styled framer-motion @chakra-ui/icons
 - 新規 theme/theme.js (グローバルなテーマを設定する)
 - 更新 index.js (ChakraProvider を設置)
+
+## step-15
+リファクタリング (TodoList に TodoTitle を取り込む)
+- 更新 components/App.js
+- 更新 components/TodoList.js

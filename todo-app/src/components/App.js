@@ -13,12 +13,10 @@ function App() {
     <>
       <TodoTitle title="TODO進捗管理" as ="h1" />
       <TodoAdd addTodo={addTodo} />
-
-      <TodoTitle title="未完了リスト" as ="h2" />
-      <TodoList todoList={inCompletedList} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
-
-      <TodoTitle title="完了リスト" as ="h2" />
-      <TodoList todoList={completedList} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+      <TodoList title="未完了リスト" as ="h2"
+        todoList={inCompletedList} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+      <TodoList title="完了リスト" as ="h2"
+        todoList={completedList} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </>
   );
 }
