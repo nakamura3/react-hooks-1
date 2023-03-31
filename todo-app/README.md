@@ -79,3 +79,11 @@ Chakra UI を準備する
 リファクタリング (TodoList に TodoTitle を取り込む)
 - 更新 components/App.js
 - 更新 components/TodoList.js
+
+## step-16
+Charkra UI を段階的に導入
+TodoTitle に Heading を使用
+- 更新 components/TodoTitile.js
+- 更新 components/TodoList.js
+- 更新 components/App.js
+
